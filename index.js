@@ -16,25 +16,45 @@ function show(marks){
     
       }
 }
-function grade(params) {
+function indices() {
+    //1) Brute force
+
+    // var n=nums.length;
+    // for(var i=0;i<n-1;i++){
+    //     for(var j=1;j<n;j++){
+    //         if(nums[i]+nums[j] == target){
+    //             return [i,j];
+    //         }
+    //     }
+    // }
+
+    //2)Optimal solution Linear 
+
+    //Initializing HashMap
     debugger;
-    n=5;
-    arr = [49,55,61,77,79]
-    target_sum =94; 
-    
-        var left=0;
-        var right=n-1;
-        while(left<right){
-            if((arr[left]+arr[right])==target_sum){
-                console.log( 'Present');
-            }
-            else  if((arr[left]+arr[right])<target_sum){
-                left++;
-            }
-            else if((arr[left]+arr[right])>target_sum){
-                right--;
-            }
+    target= 9;
+    nums= [4,1,9,5];
+    let map = new Map();
+    let n = nums.length;
+    //Linear loop upto last before digit
+    for (let i = 0; i <= n - 1; i++) {
+        let value = target - nums[i];
+        //check
+        if (map.has(value)) {
+            return [map.get(value), i];
         }
-        console.log( 'Not Present')
+        map.set(nums[i], i);
+    }
+    return null
 }
 
+function Print(data,n) {
+    for (let i = 0; i < n; i++) {
+        if (n==data) {
+            break
+        }
+    }    
+    for (let i = 0; i < 10; i++) {
+            break
+    }    
+}
