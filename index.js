@@ -58,3 +58,17 @@ function Print(data,n) {
             break
     }    
 }
+
+let array = [[4,9,2],[3,5,7],[8,1,6]]
+function MagicMatrix() {
+    for (let indexrow = 0; indexrow < array.length; indexrow++) {
+        let col = 0;
+        for (let indexcol = 0; indexcol < array.length; indexcol++) {
+            col += array[indexcol][indexrow];
+        }
+        if (col == 15) {
+            console.log('true')
+        }
+    }
+}
+MagicMatrix();
