@@ -91,8 +91,8 @@ console.log(lenArr[7])
 // Print the matrix order of row -- Default
 // Print the matrix order of column 
 // Diagonal traversal - if we know the cell dowe can fet T.C = O(n) for 2d array 
-//Primary Diagonal of 3*3 
-//Secondary Diagonal of 3*3
+// Primary Diagonal of 3*3 
+// Secondary Diagonal of 3*3
 
 let matrix = [[4, 9, 2], [3, 5, 9], [8, 1, 6]]
 let n = 3;
@@ -157,3 +157,24 @@ function cyclicRotation() {
     }
     console.log(rotatedArr)
 }
+
+
+let strCapFirst = 'the shahul is se in hcl'
+
+let = '1 2 + 2 4 + *'
+
+
+// 1,2,+,2,3,+,*
+
+//pop out 1
+//pop out 2
+// operation + so, 1+2 =3
+
+//now  3,+,2,3,+,*
+
+//pop out 2
+//pop out 3
+// operation + so, 2+5 =7
+
+//now 3,+,7,+,*
+
