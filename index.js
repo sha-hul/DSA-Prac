@@ -178,129 +178,77 @@ let = '1 2 + 2 4 + *'
 
 //now 3,+,7,+,*
 function toCapitalize(ch) {
-    return ch + ('a'-'A');
+    return ch + ('a' - 'A');
 }
-let str='hello';
+let str = 'hello';
 str = str.split('');
 str[0] = toCapitalize(str[0]);
 str = str.join('');
 
 console.log(str)
-
+//#region countVowels
 function countVowels() {//13
     debugger
     let word = 'APjjnneGMrCOhvtAlXUJhFGeFfvdvsiQfQXAhtmIqGahKXyWcPDxzqFtjFZbAenSpMScTMVdtSbYBxeCwFmxHvcJD';
-    let res=0;
+    let res = 0;
     let lowerWord = word.toLowerCase();
-    if(lowerWord.includes('a')||lowerWord.includes('e')||lowerWord.includes('i')||lowerWord.includes('o')||lowerWord.includes('u') ){
-        let stringtoArr=word.split('');
-        for(let i=0;i<stringtoArr.length;i++){
-          if(stringtoArr[i].includes('a')||stringtoArr[i].includes('e')||stringtoArr[i].includes('i')||stringtoArr[i].includes('o')||stringtoArr[i].includes('u') ){
-            res++;
-          }
+    if (lowerWord.includes('a') || lowerWord.includes('e') || lowerWord.includes('i') || lowerWord.includes('o') || lowerWord.includes('u')) {
+        let stringtoArr = word.split('');
+        for (let i = 0; i < stringtoArr.length; i++) {
+            if (stringtoArr[i].includes('a') || stringtoArr[i].includes('e') || stringtoArr[i].includes('i') || stringtoArr[i].includes('o') || stringtoArr[i].includes('u')) {
+                res++;
+            }
         }
     }
     console.log(res);
-    
-  }
-  class Stack{
-    constructor(){
-    this.item= [];
-    }
-    //push
-    push(element){
-        this.item.push(element);
-    }
-    //pop
-    pop(){
-        return this.item.length != 0 ?  this.item.pop(): 'No Items in Stack';
-    }
-    //getSize
-    size(){
-        return this.item.length  
-    }
-    //isEmpty
-    isEmpty(){
-        return this.item.length == 0 ;
-    }
-    //peek
-    peek(){
-        return this.item.length != 0 ? this.item[0] : null  ;
-    }
-}
-  function postfixExpression() {
-    debugger;
-    exp= '9 9 * 1 5 - - 8 2 + 4 3 + * - 6 6 + 6 6 - + 9 8 * 9 1 * + * * 8 3 6 - 2 7 - + + 2 - +'; // op 200
-    //Declare the Stack
-    let stack = new Stack();
-    //change to arr
-    let arr = exp.split(' ');
-    //check the negative numbers
-        
-        //traverse the array
-        for (let i = 0; i < arr.length; i++) {
-            //check if the index in operator
-            if (arr[i] == '+' || arr[i] == '-' || arr[i] == '*') {
-                //pop out element last
-                let b = stack.pop();
-                //pop out element lastprevious
-                let a = stack.pop();
-                let _a=Number(a);
-                let _b=Number(b);
-                if (arr[i] == '+') {
-                    stack.push(_a + _b)
-                }
-                else if (arr[i] == '-') {
-                    stack.push(_a - _b )
-                }
-                else {
-                    stack.push(_a * _b)
-                }
-            }
-            else {
-                //push the element in stack
-                stack.push(arr[i]);
-            }
-        }
-        let res = stack.pop()
-        console.log(res)
-    }
 
-    function validParenthesis() {
-        debugger
-        s='([)]';
-       //Declare the stack
-    let stack = new Stack();
-    //string to array
-    let arr = s.split(''); //[({})]
-    if (arr.length == 0) return true;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == '}' || arr[i] == ']' || arr[i] == ')') {
-            if (arr[i] == '}') {
-                let res = stack.pop();
-                if (!(res == '{')) {
-                    console.log(false) 
-                    break
-                }
-            }
-            if (arr[i] == ']') {
-                let res = stack.pop();
-                if (!(res == '[')) {
-                    console.log(false) 
-                    break
-                }
-            }
-            if (arr[i] == ')') {
-                let res = stack.pop();
-                if (!(res == '(')) {
-                    console.log(false) 
-                    break
-                }
-            }
-        }
-        else {
-            stack.push(arr[i]);
+}
+//#endregion
+
+//To change the lowercase to upper case
+function islowercase(char) {
+    return char >= 'a' && char <= 'z'
+  }
+  //Doubt
+  
+  function toUpper(paragraph,charIndex) {
+    debugger;
+    let asciiCode = (paragraph.charCodeAt(charIndex)) - 32;
+    return String.fromCharCode(asciiCode);
+  }
+  
+  //T.C = O(n) , S.C = O(1) 
+  // TODO: Implement this method
+  function capitalise() {
+    paragraph= ''
+        let result = "";
+      for (let i = 0; i < paragraph.length; i++) {
+          if (i == 0) {
+              if (islowercase(paragraph[0])) {
+                  result = result +toUpper(paragraph,i);
+              }
+              else{
+                 result = result + paragraph[i];
+              }
+          }
+          else if (paragraph[i - 1] == ' ') {
+               result = result +toUpper(paragraph,i);
+          }
+          else {
+              result = result + paragraph[i];
+          }
+      }
+    return result;
+  }
+  //Find the maximum pairs 
+  //constrain no numbers are repeative
+
+  function MaxPairs() {
+    let arr = ['R','Y','B','P']
+    for(let i=0;i<arr.length;i++){
+        let arr2 =  [];
+        for(let j=0;j<arr.length;j++){
+            arr2[]
         }
     }
-    console.log(true) 
-    }
+  }
