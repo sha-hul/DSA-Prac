@@ -57,10 +57,21 @@ map.forEach((val, index) => console.log(index + ' : ' + val))
 function intersectionOfTwoArraysBasic() {
     debugger
     let n = 19;
-    let nums1 = [41, 29, 80, -4, 29, 76, 47, 8, 6, 72, 84, 45, 41, -15, 38, -52, -18, -19, 18]
+    let nums1 = [, , 80, -4, , 76, , , , 72, , , 41, , , , -18, -19, 18]
     let m = 11;
     let nums2 = [38, 41, 84, -15, -52, 6, 45, 8, 29, 29, 47]
-
+    
+    38  //ok
+    41 // ok
+    84
+    -15
+    -52 
+    6
+    45 
+    8
+    29
+    29
+    47
     //declare the map
     let map = new Map();
     //add the key and value frequency 
@@ -88,3 +99,28 @@ function intersectionOfTwoArraysBasic() {
     }
     return resArr;
 }
+
+let Qmap = new Map(); 
+
+Qmap.set('name', _name)
+Qmap.set('Age', age)
+Qmap.set('Designation', designation)
+Qmap.set('Game', game)
+
+console.log(Qmap)
+
+let keys =[Qmap.keys()];
+let keyset = new Set(keys);
+
+keyset.forEach(val=>console.log(val))
+console.log(keyset.has('name'))
+
+//console.log(keyset.has('Age'))
+
+keyset.delete('Age');
+
+console.log(keyset.has('Age'))
+keyset.forEach(val=>console.log(val))
+
+console.log(Qmap.has('name'))
+console.log(Qmap.has('Age'))
